@@ -103,9 +103,9 @@ function iniciarPrograma() {
     switch (opcao) {
       case "1":
         rl.question("Digite o nome da série: ", nome => {
-          rl.question("Digite o distribuidor da série: ", distribuidor => {
-            rl.question("Digite a prioridade da série (1-3): ", prioridade => {
-              rl.question("Digite o estado da série (assistir/assistido): ", estado => {
+          rl.question("Plataforma onde assistir: ", distribuidor => {
+            rl.question("Defina o nivel de prioridade: ", prioridade => {
+              rl.question("Marcar como assistido ou assistir: ", estado => {
                 cadastrarSerie(nome, distribuidor, parseInt(prioridade), estado);
                 console.log(""); 
                 iniciarPrograma();
@@ -129,7 +129,7 @@ function iniciarPrograma() {
 
       case "4":
         rl.question("Digite o nome da série que deseja alterar o estado: ", nome => {
-          rl.question("Digite o novo estado da série (assistir/assistido): ", novoEstado => {
+          rl.question("assistir ou assistido: ", novoEstado => {
             alterarSerie(nome, novoEstado);
             console.log(""); 
             iniciarPrograma();
